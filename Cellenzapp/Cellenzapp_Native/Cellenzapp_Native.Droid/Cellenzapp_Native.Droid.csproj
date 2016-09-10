@@ -46,6 +46,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Cellenzapp_Native\Cellenzapp_Native.csproj">
       <Name>Cellenzapp_Native</Name>
+      <Project>{EB71DDB2-3F8B-41EE-8C6F-DE18357A5047}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

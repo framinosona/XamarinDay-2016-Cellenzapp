@@ -24,8 +24,10 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>i386, x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchSdkVersion>9.3</MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -139,7 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cellenzapp_Forms\Cellenzapp_Forms.csproj">
-      <Project>{70339ea3-21fd-46f7-9ce7-0689d1b0458d}</Project>
+      <Project>{3ABDC0DF-5B64-40D4-93FD-6E01BC27FE85}</Project>
       <Name>Cellenzapp_Forms</Name>
     </ProjectReference>
   </ItemGroup>

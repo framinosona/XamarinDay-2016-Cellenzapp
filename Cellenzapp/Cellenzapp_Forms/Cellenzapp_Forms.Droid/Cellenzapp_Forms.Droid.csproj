@@ -122,7 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cellenzapp_Forms\Cellenzapp_Forms.csproj">
-      <Project>{70339ea3-21fd-46f7-9ce7-0689d1b0458d}</Project>
+      <Project>{3ABDC0DF-5B64-40D4-93FD-6E01BC27FE85}</Project>
       <Name>Cellenzapp_Forms</Name>
     </ProjectReference>
   </ItemGroup>
