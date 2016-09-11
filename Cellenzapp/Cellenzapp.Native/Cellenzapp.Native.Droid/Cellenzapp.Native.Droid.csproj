@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3C0F440-D99A-4269-916F-4181C5E0F6F7}</ProjectGuid>
+    <ProjectGuid>{2CBC6A02-CACB-4395-9F75-315233391446}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>Cellenzapp.Native.Droid</RootNamespace>
@@ -54,11 +54,32 @@
     <Reference Include="GalaSoft.MvvmLight.Platform">
       <HintPath>..\..\packages\MvvmLightLibs.5.3.0.0\lib\monoandroid1\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.ExternalMaps">
+      <HintPath>..\..\packages\Xam.Plugin.ExternalMaps.3.0.0\lib\MonoAndroid10\Plugin.ExternalMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugin.ExternalMaps.3.0.0\lib\MonoAndroid10\Plugin.ExternalMaps.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Messaging.3.2.1\lib\MonoAndroid10\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging">
+      <HintPath>..\..\packages\Xam.Plugins.Messaging.3.2.1\lib\MonoAndroid10\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.1.0\lib\MonoAndroid10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.1.0\lib\MonoAndroid10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -67,26 +88,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\layout\" />
-    <Folder Include="Resources\mipmap-hdpi\" />
-    <Folder Include="Resources\mipmap-mdpi\" />
-    <Folder Include="Resources\mipmap-xhdpi\" />
-    <Folder Include="Resources\mipmap-xxhdpi\" />
-    <Folder Include="Resources\mipmap-xxxhdpi\" />
-    <Folder Include="Resources\drawable\" />
-  </ItemGroup>
-  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Cellenzapp.Core\Cellenzapp.Core\Cellenzapp.Core.csproj">
-      <Project>{0F9DE0A2-102C-41BE-8B14-E018E4FD8D98}</Project>
-      <Name>Cellenzapp.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cellenzapp.Native\Cellenzapp.Native.csproj">
-      <Project>{EB71DDB2-3F8B-41EE-8C6F-DE18357A5047}</Project>
-      <Name>Cellenzapp.Native</Name>
-    </ProjectReference>
+    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

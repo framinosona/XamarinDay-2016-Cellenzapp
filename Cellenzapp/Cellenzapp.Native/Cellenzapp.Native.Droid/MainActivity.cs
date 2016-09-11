@@ -4,17 +4,25 @@ using Android.OS;
 
 namespace Cellenzapp.Native.Droid
 {
-	[Activity(Label = "Cellenzapp.Native.Droid", MainLauncher = true)]
-	public class MainActivity : Activity
-	{
-		protected override void OnCreate(Bundle savedInstanceState)
-		{
-			base.OnCreate(savedInstanceState);
+    [Activity(Label = "Cellenzapp.Native.Droid", MainLauncher = true, Icon = "@mipmap/icon")]
+    public class MainActivity : Activity
+    {
+        int count = 1;
 
-			// Set our view from the "main" layout resource
-			// SetContentView (Resource.Layout.YourMainView);
-		}
-	}
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Main);
+
+            // Get our button from the layout resource,
+            // and attach an event to it
+            Button button = FindViewById<Button>(Resource.Id.myButton);
+
+            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+        }
+    }
 }
 
 

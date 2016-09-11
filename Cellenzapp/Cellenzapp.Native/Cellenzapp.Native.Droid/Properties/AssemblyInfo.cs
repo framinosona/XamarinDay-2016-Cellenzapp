@@ -8,9 +8,9 @@ using Android.App;
 [assembly: AssemblyTitle("Cellenzapp.Native.Droid")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Francois Raminosona")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("John")]
+[assembly: AssemblyCopyright("François Raminosona")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
