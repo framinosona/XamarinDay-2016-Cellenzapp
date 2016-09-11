@@ -61,6 +61,10 @@ namespace Cellenzapp.Core.Model
 
         [DataMember(Name = "postcode")]
         public object Postcode { get; set; }
+
+        public double Lat { get; set; } = 48.876092;
+
+        public double Lon { get; set; } = 2.311152;
     }
 
     [DataContract]
@@ -150,16 +154,20 @@ namespace Cellenzapp.Core.Model
         [DataMember(Name = "nat")]
         public string Nat { get; set; }
 
-        public Position Position { get; set; } = new Position();
+        public Job Job { get; set; } = new Job();
+
+        public string TwitterHandle { get; set; } = "Twitter";
+
+        public string AboutMe { get; set; } = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis mattis leo, eget blandit ex. Proin non quam et massa elementum eleifend. Fusce mauris velit, sodales in tristique sit amet, aliquam vitae purus. Sed consectetur condimentum porta. Suspendisse potenti. Nam ex leo, efficitur sed tincidunt sed, mollis non diam. Proin id euismod est. Aliquam erat volutpat. ";
     }
 
-    public class Position
+    public class Job
     {
         public string Full => $"{JobTitle} @{Company}";
 
-        public string JobTitle { get; set; }
+        public string JobTitle { get; set; } = "Consultant";
 
-        public string Company { get; set; }
+        public string Company { get; set; } = "Cellenza";
     }
     [DataContract]
     public class RandomUserResults

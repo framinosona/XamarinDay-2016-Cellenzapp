@@ -11,16 +11,18 @@
 			x:Name="ListViewMenu"
 			ItemsSource="{Binding CellExperts, Mode=OneWay}"
 			HasUnevenRows="True"
-			VerticalOptions="Start"
+			VerticalOptions="Fill"
 			IsPullToRefreshEnabled="True"
 			IsRefreshing="{Binding IsBusy, Mode=OneWay}"
 			RefreshCommand="{Binding RefreshCommand}"
 			HorizontalOptions="Fill"
-			SeparatorVisibility="None">
+			SeparatorVisibility="None"
+			ItemTapped="Handle_ItemTapped"
+			ItemSelected="Handle_ItemSelected">
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<ViewCell>
-						<Views:CellExpertListItem />
+						<Views:CellExpertListItem HeightRequest="400" />
 					</ViewCell>
 				</DataTemplate>
 			</ListView.ItemTemplate>
