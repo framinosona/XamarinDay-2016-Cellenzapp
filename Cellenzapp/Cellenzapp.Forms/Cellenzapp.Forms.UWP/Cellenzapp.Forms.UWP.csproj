@@ -128,6 +128,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Cellenzapp.Core\Cellenzapp.Core\Cellenzapp.Core.csproj">
+      <Project>{0f9de0a2-102c-41be-8b14-e018e4fd8d98}</Project>
+      <Name>Cellenzapp.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cellenzapp.Forms\Cellenzapp.Forms.csproj">
       <Project>{70339ea3-21fd-46f7-9ce7-0689d1b0458d}</Project>
       <Name>Cellenzapp.Forms</Name>
