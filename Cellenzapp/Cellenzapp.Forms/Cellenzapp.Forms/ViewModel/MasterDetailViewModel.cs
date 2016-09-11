@@ -71,7 +71,7 @@ namespace Cellenzapp.Forms.ViewModel
                         Title = "Cell'Experts",
                         MenuPagesEnum = MenuPagesEnum.CellExperts,
                         ImgSource = ImageSource.FromResource("Cellenzapp.Forms.Resources.Images.social.png"),
-                        CreateNavigationPage = () => new NavigationPage(new CellExpertsPage())
+                        CreateNavigationPage = () => new NavigationPage(new CellExpertsListPage())
                     }
                 },
                 {

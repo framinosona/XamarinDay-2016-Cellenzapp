@@ -11,6 +11,6 @@ namespace Cellenzapp.Core.Data
     {
         IEnumerable<CellExpert> CellExperts { get; set; }
 
-        Task<bool> TryLoadCellExpertsAsync();
+        Task<IEnumerable<CellExpert>> TryLoadCellExpertsAsync();
     }
 }

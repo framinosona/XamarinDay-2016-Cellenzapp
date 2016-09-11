@@ -31,9 +31,9 @@ using Cellenzapp.Core.ViewModel;
 
 namespace Cellenzapp.Forms.Views
 {
-    public partial class CellExpertsPage : ContentPage
+    public partial class CellExpertsListPage : ContentPage
     {
-        public CellExpertsPage()
+        public CellExpertsListPage()
         {
             InitializeComponent();
         }

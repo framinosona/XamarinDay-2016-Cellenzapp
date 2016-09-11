@@ -45,8 +45,8 @@
     <Compile Include="Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CellExpertsPage.xaml.cs">
-      <DependentUpon>CellExpertsPage.xaml</DependentUpon>
+    <Compile Include="Views\CellExpertsListPage.xaml.cs">
+      <DependentUpon>CellExpertsListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -62,6 +62,9 @@
     <Compile Include="ValueConverters\NullToValueConverter.cs" />
     <Compile Include="ValueConverters\ReverseBoolConverter.cs" />
     <Compile Include="Helpers\ImageResourceExtension.cs" />
+    <Compile Include="Views\CellExpertListItem.xaml.cs">
+      <DependentUpon>CellExpertListItem.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -75,7 +78,7 @@
     <EmbeddedResource Include="Views\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CellExpertsPage.xaml">
+    <EmbeddedResource Include="Views\CellExpertsListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SettingsPage.xaml">
@@ -94,6 +97,9 @@
     <EmbeddedResource Include="Resources\Images\social.png" />
     <EmbeddedResource Include="Resources\Images\team.png" />
     <EmbeddedResource Include="Resources\Images\hamburger.png" />
+    <EmbeddedResource Include="Views\CellExpertListItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

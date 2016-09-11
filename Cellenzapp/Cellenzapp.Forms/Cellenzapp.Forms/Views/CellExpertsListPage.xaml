@@ -3,10 +3,10 @@
 	Title="Cell'Experts"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="Cellenzapp.Forms.Views.CellExpertsPage"
+	x:Class="Cellenzapp.Forms.Views.CellExpertsListPage"
 	BindingContext="{Binding CellExpertsViewModel, Source={StaticResource ViewModelLocator}}">
 	<ContentPage.Content>
-		<ListView x:Name="ListViewMenu" ItemsSource="{Binding CellExperts,Mode=TwoWay}" HasUnevenRows="True" Grid.Row="1" SeparatorColor="{StaticResource CellenzaPinkDark}" VerticalOptions="Start" HorizontalOptions="Fill">
+		<ListView x:Name="ListViewMenu" ItemsSource="{Binding CellExperts , Mode=TwoWay}" HasUnevenRows="True" Grid.Row="1" SeparatorColor="{StaticResource CellenzaPinkDark}" VerticalOptions="Start" HorizontalOptions="Fill">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -15,8 +15,8 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Image Margin="16" HeightRequest="25" Source="{Binding ProfileImage}" WidthRequest="25" />
-                            <Label VerticalOptions="Center" Grid.Column="1" FontSize="22" LineBreakMode="TailTruncation" TextColor="{StaticResource CellenzaPinkDark}" Text="{Binding Path=Value.Title}" />
+                            <Image Margin="16" HeightRequest="25" Source="{Binding Path=Picture.Thumbnail}" WidthRequest="25" />
+                            <Label VerticalOptions="Center" Grid.Column="1" FontSize="22" LineBreakMode="TailTruncation" TextColor="{StaticResource CellenzaPinkDark}" Text="{Binding Path=Name.Full}" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

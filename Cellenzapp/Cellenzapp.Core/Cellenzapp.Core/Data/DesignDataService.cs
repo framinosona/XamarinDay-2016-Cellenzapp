@@ -15,7 +15,7 @@ namespace Cellenzapp.Core.Data
         public IEnumerable<CellExpert> CellExperts { get; set; }
         HttpClient httpClient = new HttpClient();
 
-        public async Task<bool> TryLoadCellExpertsAsync()
+        public async Task<IEnumerable<CellExpert>> TryLoadCellExpertsAsync()
         {
             try {
                 var count = 20;
@@ -23,9 +23,9 @@ namespace Cellenzapp.Core.Data
                 var output = JsonConvert.DeserializeObject<RandomUserResults>(rawJson);
                 Debug.WriteLine($"DL : {output.CellExpert.Count} employees");
                 CellExperts = output.CellExpert;
-                return true;
+                return output.CellExpert;
             } catch(Exception) {
-                return false;
+                return null;
             }
         }
     }

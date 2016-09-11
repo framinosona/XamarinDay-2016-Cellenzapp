@@ -17,10 +17,16 @@ namespace Cellenzapp.Core.ViewModel
         public CellExpertsViewModel()
         {
             CellExperts = new ObservableCollection<CellExpert>();
+            Load();
+        }
+
+        public async void Load()
+        {
             var DataService = SimpleIoc.Default.GetInstance<IDataService>();
-            DataService.TryLoadCellExpertsAsync().ContinueWith((succeded) => {
-                CellExperts.Concat(DataService.CellExperts);
-            });
+            await DataService.TryLoadCellExpertsAsync();
+            foreach(var expert in DataService.CellExperts) {
+                CellExperts.Add(expert);
+            }
         }
 
     }
