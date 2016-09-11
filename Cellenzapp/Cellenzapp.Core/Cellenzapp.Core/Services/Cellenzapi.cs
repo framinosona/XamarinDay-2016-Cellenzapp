@@ -9,17 +9,19 @@ namespace Cellenzapp.Core
     public class Cellenzapi
     {
         private HttpClient _client;
+        private const string SUBSCRIPTION_KEY = "7967e8f89c93428686a7489886bb0b5c";
 
         public Cellenzapi()
         {
-            _client = new HttpClient();
         }
 
         public async Task<List<Expert>> GetExperts()
         {
-            _client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "{subscription key}");
+            _client = new HttpClient();
+            _client.DefaultRequestHeaders.Add("Ocp-Apim-Trace", "true");
+            _client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "7967e8f89c93428686a7489886bb0b5c");
 
-            var uri = "https://cellenzamanagementrandomapi.azure-api.net/cellenzapi/api/Experts";
+            var uri = "https://cellenzamanagementrandomapi.azure-api.net/cellenzapi/api/Experts?";
 
             var response = await _client.GetAsync(uri);
 

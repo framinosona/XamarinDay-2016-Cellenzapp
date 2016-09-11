@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace Cellenzapp.Tests.Api
 {
     [TestFixture()]
-    public class TestCellenzapi
+    public class Test
     {
         [Test()]
         public void TestGetExpert()
