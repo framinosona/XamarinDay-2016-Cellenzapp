@@ -27,6 +27,16 @@ namespace Cellenzapp.Core
 
             return experts;
         }
+
+        public async Task<List<Expert>> UpdateAbout()
+        {
+            return null;
+        }
+
+        public async Task<List<Expert>> AddExpert()
+        {
+            return null;
+        }
     }
 }
 
