@@ -1,5 +1,5 @@
 ﻿//
-// Main.cs
+// RootPage.cs
 //
 // Author:
 //       Francois Raminosona <framinosona@hotmail.fr>
@@ -23,18 +23,31 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using UIKit;
+using System;
+using Xamarin.Forms;
+using Cellenzapp.Forms.ViewModel;
+using GalaSoft.MvvmLight.Ioc;
 
-namespace Cellenzapp.Forms.iOS_old
+namespace Cellenzapp.Forms.Views
 {
-    public class Application
+    public class RootPage : MasterDetailPage
     {
-        // This is the main entry point of the application.
-        static void Main(string[] args)
+        private MasterDetailViewModel vm;
+        public RootPage()
         {
-            // if you want to use a different Application Delegate class from "AppDelegate"
-            // you can specify it here.
-            UIApplication.Main(args, null, "AppDelegate");
+            vm = SimpleIoc.Default.GetInstance<MasterDetailViewModel>();
+            this.Master = new MasterDetailMenu();
+            this.Detail = vm.MenuItems[vm.CurrentPageType].CreateNavigationPage();
+            Title = "Cellenzapp";
+
+            vm.CurrentPageChanged += (sender, e) => {
+                Detail = e.Page;
+
+                if(Device.Idiom != TargetIdiom.Desktop)
+                    IsPresented = false;
+            };
+
+            InvalidateMeasure();
         }
     }
 }

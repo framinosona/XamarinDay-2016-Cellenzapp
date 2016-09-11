@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	Title="Cell'Experts"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Cellenzapp.Forms.Views.CellExpertsListPage"
+	xmlns:Views="clr-namespace:Cellenzapp.Forms.Views;assembly=Cellenzapp.Forms"
+	BindingContext="{Binding CellExpertsViewModel, Source={StaticResource ViewModelLocator}}">
+	<ContentPage.Content>
+		<ListView
+			x:Name="ListViewMenu"
+			ItemsSource="{Binding CellExperts, Mode=OneWay}"
+			HasUnevenRows="True"
+			VerticalOptions="Start"
+			IsPullToRefreshEnabled="True"
+			IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+			RefreshCommand="{Binding RefreshCommand}"
+			HorizontalOptions="Fill"
+			SeparatorVisibility="None">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<Views:CellExpertListItem />
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>

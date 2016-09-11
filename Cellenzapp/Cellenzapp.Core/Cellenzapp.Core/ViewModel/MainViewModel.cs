@@ -21,8 +21,7 @@ namespace Cellenzapp.Core.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            // As this ViewModel is the first one, he is always loading
-            IsLoading = true;
+
             ////if (IsInDesignMode)
             ////{
             ////    // Code runs in Blend --> create design time data.

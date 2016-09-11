@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:helpers="clr-namespace:Cellenzapp.Forms.Helpers;assembly=Cellenzapp.Forms" 
+		Title="Cellenzapp"
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Cellenzapp.Forms.Views.MasterDetailMenu">
+	<StackLayout VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="{StaticResource CellenzaPinkDark}">
+		<Image Source="{helpers:ImageResource Cellenzapp.Forms.Resources.Images.Logo-cellenza-half.png}" Margin="20" HorizontalOptions="Fill" />
+		<ListView x:Name="ListViewMenu" ItemsSource="{Binding Path=MasterDetailViewModel.MenuItems, Source={StaticResource ViewModelLocator}}" HasUnevenRows="True" Grid.Row="1" SeparatorColor="{StaticResource CellenzaPinkDark}" VerticalOptions="Start" HorizontalOptions="Fill" BackgroundColor="White">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell IsEnabled="{Binding Path=Value.IsEnabled}">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Image Margin="16" HeightRequest="25" Source="{Binding Path=Value.ImgSource}" WidthRequest="25" />
+							<Label VerticalOptions="Center" Grid.Column="1" FontSize="22" LineBreakMode="TailTruncation" TextColor="{StaticResource CellenzaPinkDark}" Text="{Binding Path=Value.Title}" />
+						</Grid>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>
