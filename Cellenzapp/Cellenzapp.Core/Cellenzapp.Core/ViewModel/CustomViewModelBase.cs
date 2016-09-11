@@ -5,29 +5,26 @@ namespace Cellenzapp.Core.ViewModel
     public class CustomViewModelBase : ViewModelBase
     {
         /// <summary>
-        ///     The <see cref="IsLoading" /> property's name.
+        ///     The <see cref="IsBusy" /> property's name.
         /// </summary>
-        public const string IsLoadingPropertyName = "IsLoading";
+        public const string IsBusyPropertyName = "IsBusy";
 
-        private bool _isLoading;
+        private bool _isBusy;
 
         /// <summary>
-        ///     Sets and gets the IsLoading property.
+        ///     Sets and gets the IsBusy property.
         ///     Changes to that property's value raise the PropertyChanged event.
         /// </summary>
-        public bool IsLoading
-        {
-            get { return _isLoading; }
+        public bool IsBusy {
+            get { return _isBusy; }
 
-            set
-            {
-                if (_isLoading == value)
-                {
+            set {
+                if(_isBusy == value) {
                     return;
                 }
 
-                _isLoading = value;
-                RaisePropertyChanged(IsLoadingPropertyName);
+                _isBusy = value;
+                RaisePropertyChanged(IsBusyPropertyName);
             }
         }
     }

@@ -9,12 +9,14 @@
 	<ContentPage.Content>
 		<ListView
 			x:Name="ListViewMenu"
-			ItemsSource="{Binding CellExperts , Mode=TwoWay}"
+			ItemsSource="{Binding CellExperts, Mode=OneWay}"
 			HasUnevenRows="True"
-			SeparatorColor="{StaticResource CellenzaPinkDark}"
-			CachingStrategy="RecycleElement"
 			VerticalOptions="Start"
-			HorizontalOptions="Fill">
+			IsPullToRefreshEnabled="True"
+			IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+			RefreshCommand="{Binding RefreshCommand}"
+			HorizontalOptions="Fill"
+			SeparatorVisibility="None">
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<ViewCell>

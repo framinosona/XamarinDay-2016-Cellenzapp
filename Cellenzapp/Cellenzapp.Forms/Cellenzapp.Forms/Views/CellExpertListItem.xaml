@@ -20,6 +20,7 @@
 					Text="{Binding Name.Full}"
 					LineBreakMode="WordWrap"
 					Style="{DynamicResource ListItemTextStyle}"
+						FontSize="30"
 					TextColor="White"
 					HorizontalTextAlignment="Center"
 					HorizontalOptions="Fill">
@@ -28,6 +29,7 @@
 					Text="{Binding Email}"
 					LineBreakMode="CharacterWrap"
 					Style="{DynamicResource ListItemDetailTextStyle}"
+                        FontSize="22"
 					TextColor="White"
 					HorizontalTextAlignment="Center"
 					HorizontalOptions="Fill">
