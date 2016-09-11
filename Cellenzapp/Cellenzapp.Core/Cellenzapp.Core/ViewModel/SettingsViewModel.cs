@@ -10,9 +10,9 @@ namespace Cellenzapp.Core.ViewModel
     public class SettingsViewModel : CustomViewModelBase
     {
         public bool IsTwitterSynchronized {
-            get { return this.IsTwitterSynchronized; }
+            get { return Settings.TwitterSynchro; }
             set {
-                this.IsTwitterSynchronized = value;
+                Settings.TwitterSynchro = value;
                 this.RaisePropertyChanged("IsTwitterSynchronized");
             }
         }

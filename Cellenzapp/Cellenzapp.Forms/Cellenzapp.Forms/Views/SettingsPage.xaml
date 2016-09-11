@@ -8,13 +8,13 @@
 	<ContentPage.Content>
 		<TableView
 			Intent="Settings">
-			<TableRoot>
-				<TableSection>
-					<SwitchCell
-						Text="Synchronisation twitter"
-						On="{Binding IsTwitterSynchronized, Mode=TwoWay}" />
-				</TableSection>
-			</TableRoot>
+			<TableSection
+				Title="">
+				<SwitchCell
+					Text="Synchronisation twitter"
+					On="{Binding IsTwitterSynchronized, Mode=TwoWay}">
+				</SwitchCell>
+			</TableSection>
 		</TableView>
 	</ContentPage.Content>
 </ContentPage>

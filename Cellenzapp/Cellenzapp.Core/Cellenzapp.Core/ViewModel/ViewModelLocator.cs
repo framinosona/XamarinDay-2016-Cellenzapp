@@ -23,7 +23,7 @@ namespace Cellenzapp.Core.ViewModel
     /// This class contains static references to all the view models in the
     /// application and provides an entry point for the bindings.
     /// </summary>
-    public class ViewModelLocator
+    public abstract class ViewModelLocator
     {
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
@@ -37,7 +37,7 @@ namespace Cellenzapp.Core.ViewModel
                 SimpleIoc.Default.Register<IDataService, DesignDataService>();
             } else {
                 // Create run time view services and models
-                SimpleIoc.Default.Register<IDataService, DesignDataService>();
+                SimpleIoc.Default.Register<IDataService, DataService>();
             }
 
             SimpleIoc.Default.Register<MainViewModel>();

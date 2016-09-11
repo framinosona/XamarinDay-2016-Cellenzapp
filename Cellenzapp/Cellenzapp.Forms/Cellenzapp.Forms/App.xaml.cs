@@ -16,11 +16,6 @@ namespace Cellenzapp.Forms
         public App()
         {
             InitializeComponent();
-            /*
-			ResourceDictionary rd = new ResourceDictionary();
-			rd.Add("Locator", new Cellenzapp.Core.ViewModel.ViewModelLocator());
-
-			Resources = rd;*/
 
             var assembly = typeof(Cellenzapp.Forms.Views.SettingsPage).GetTypeInfo().Assembly;
             foreach(var res in assembly.GetManifestResourceNames())

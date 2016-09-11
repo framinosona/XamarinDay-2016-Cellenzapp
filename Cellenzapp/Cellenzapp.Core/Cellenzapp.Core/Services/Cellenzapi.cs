@@ -21,13 +21,17 @@ namespace Cellenzapp.Core
             _client.DefaultRequestHeaders.Add("Ocp-Apim-Trace", "true");
             _client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "7967e8f89c93428686a7489886bb0b5c");
 
+
+            var rawJson = await _client.GetStringAsync("https://cellenzamanagementrandomapi.azure-api.net/cellenzapi/api/Experts?");
+            var output = JsonConvert.DeserializeObject<List<Expert>>(rawJson);
+            /*
             var uri = "https://cellenzamanagementrandomapi.azure-api.net/cellenzapi/api/Experts?";
 
             var response = await _client.GetAsync(uri);
 
             List<Expert> experts = JsonConvert.DeserializeObject<List<Expert>>(response.Content.ToString());
-
-            return experts;
+*/
+            return output;
         }
 
         public async Task<List<Expert>> UpdateAbout()
