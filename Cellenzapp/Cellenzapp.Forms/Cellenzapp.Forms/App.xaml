@@ -1,11 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Cellenzapp.Forms.App" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:forms="http://xamarin.com/schemas/2014/forms"
-             xmlns:viewModel="clr-namespace:Cellenzapp.Core.ViewModel;assembly=Cellenzapp.Core">
-  <Application.Resources>
-    <!-- Application resource dictionary -->
-  <!--  <forms:ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-      <viewModel:ViewModelLocator x:Key="ViewModelLocator" d4p1:Key="Locator" d:IsDataSource="True" xmlns:d4p1="http://schemas.microsoft.com/winfx/2006/xaml" />
-    </forms:ResourceDictionary>-->
-  </Application.Resources>
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:darktheme="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark" xmlns:lighttheme="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light" xmlns:valueConverters="clr-namespace:Cellenzapp.Forms.ValueConverters;assembly=Cellenzapp.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Cellenzapp.Forms.App" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewModel="clr-namespace:Cellenzapp.Forms.ViewModel;assembly=Cellenzapp.Forms">
+	<Application.Resources>
+		<!-- Application resource dictionary -->
+		<ResourceDictionary MergedWith="lighttheme:LightThemeResources">
+			<viewModel:FormsViewModelLocator x:Key="ViewModelLocator" d4p1:Key="Locator" d:IsDataSource="True" xmlns:d4p1="http://schemas.microsoft.com/winfx/2006/xaml" />
+			<!-- COLORS -->
+			<Color x:Key="CellenzaPinkDark">#352135</Color>
+			<Color x:Key="CellenzaPinkLight">#E5007D</Color>
+			<Color x:Key="XamarinWindowsBlue">#3498BD</Color>
+			<Color x:Key="XamarinAndroidGreen">#77D065</Color>
+			<Color x:Key="XamarinIOSPurple">#B455B6</Color>
+			<!-- VALUE CONVERTERS -->
+			<valueConverters:MathValueConverter x:Key="MathValueConverter" />
+			<valueConverters:ReverseBoolConverter x:Key="ReverseBoolConverter" />
+			<!-- STYLES -->
+			<Style TargetType="NavigationPage">
+				<Setter Property="BarBackgroundColor" Value="{DynamicResource CellenzaPinkLight}" />
+				<Setter Property="BarTextColor" Value="{DynamicResource White}" />
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>

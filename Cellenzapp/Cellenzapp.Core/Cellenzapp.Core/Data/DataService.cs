@@ -3,31 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Cellenzapp.Core.BusinessObjects;
 
 namespace Cellenzapp.Core.Data
 {
-    class DataService : IDataService
+    class DataService
     {
-        private bool IsCorrectlyLoaded = false;
-        private Task<bool> LoadingCellExperts;
-        public IEnumerable<CellExpert> CellExperts { get; set; }
-
-        public async Task<bool> TryLoadCellExpertsAsync()
-        {
-            if (LoadingCellExperts != null)
-            {
-                await LoadingCellExperts;
-                return IsCorrectlyLoaded;
-            }
-            else
-            {
-                LoadingCellExperts = new Task<bool>(() =>
-                {
-                    return true;
-                });
-            }
-            return true;
-        }
     }
 }

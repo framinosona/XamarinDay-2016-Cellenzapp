@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Cellenzapp.Core.BusinessObjects;
+using Cellenzapp.Core.Model;
 
 namespace Cellenzapp.Core.Data
 {
