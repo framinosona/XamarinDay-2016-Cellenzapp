@@ -1,5 +1,5 @@
 ﻿//
-// CellExpertsPage.xaml.cs
+// CellExpertDetailPage.xaml.cs
 //
 // Author:
 //       Francois Raminosona <framinosona@hotmail.fr>
@@ -27,38 +27,39 @@ using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
-using Cellenzapp.Core.ViewModel;
 using Cellenzapp.Core.Model;
 using System.Diagnostics;
+using Xamarin.Forms.Maps;
 
 namespace Cellenzapp.Forms.Views
 {
-    public partial class CellExpertsListPage : ContentPage
+    public partial class CellExpertDetailPage : ContentPage
     {
-        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
-        {
-            ListViewMenu.SelectedItem = null;
-        }
 
-        async void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
-        {
-            var expert = e.Item as CellExpert;
-            if(expert == null) {
-                Debug.WriteLine($"Tapped : null");
-                return;
-            }
-            Debug.WriteLine($"Tapped : {expert.Name.Full}");
+        CellExpert Expert;
 
-            try {
-                await this.Navigation.PushAsync(new CellExpertDetailPage(expert));
-            } catch(Exception ex) {
-                Debug.WriteLine($"Navigation error : {ex}");
-            };
-        }
-
-        public CellExpertsListPage()
+        public CellExpertDetailPage(CellExpert expert)
         {
             InitializeComponent();
+            Expert = expert;
+            this.BindingContext = expert;
+            this.Title = expert.Name.Full;
+            Debug.WriteLine($"Navigated to : {expert.Name.Full}");
+
+
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            var position = new Position(Expert.Location.Lat, Expert.Location.Lon);
+            var pin = new Pin {
+                Type = PinType.Place,
+                Position = position,
+                Label = "",
+                Address = $"{Expert.Location.Street} - {Expert.Location.City} {Expert.Location.Postcode}"
+            };
+            Location.Pins.Add(pin);
+            Location.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(1)));
         }
     }
 }

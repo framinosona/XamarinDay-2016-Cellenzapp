@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Cellenzapp.Forms.Views.CellExpertDetailPage"
+	xmlns:Views="clr-namespace:Cellenzapp.Forms.Views;assembly=Cellenzapp.Forms"
+	xmlns:helpers="clr-namespace:Cellenzapp.Forms.Helpers;assembly=Cellenzapp.Forms"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	Title="Cell'Expert">
+	<ContentPage.ToolbarItems>
+		<!--<ToolbarItem
+			Name="Share"
+			x:Name="shareProfile">
+		</ToolbarItem>-->
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout
+				BackgroundColor="White"
+				Spacing="0">
+				<Views:CellExpertListItem
+					HeightRequest="400" />
+				<StackLayout
+					Padding="12"
+					Spacing="6"
+					BackgroundColor="{StaticResource CellenzaPinkLight}">
+					<Label
+						Text="About me"
+						Style="{DynamicResource ListItemTextStyle}"
+						FontSize="20"
+						TextColor="{StaticResource CellenzaPinkDark}">
+					</Label>
+				</StackLayout>
+				<StackLayout
+					Padding="12"
+					Spacing="6">
+					<Label
+						Text="{Binding AboutMe}"
+						Style="{DynamicResource ListItemTextStyle}"
+						LineBreakMode="WordWrap"
+						TextColor="{StaticResource CellenzaPinkDark}" />
+				</StackLayout>
+				<StackLayout
+					Padding="12"
+					Spacing="6"
+					BackgroundColor="{StaticResource CellenzaPinkLight}">
+					<Label
+						Text="Contact information"
+						Style="{DynamicResource ListItemTextStyle}"
+						FontSize="20"
+						TextColor="{StaticResource CellenzaPinkDark}">
+					</Label>
+				</StackLayout>
+				<TableView
+					Intent="Form"
+					HasUnevenRows="true">
+					<TableRoot>
+						<TableSection>
+							<TextCell
+								Text="{Binding TwitterHandle, StringFormat='@{0}'}"
+								TextColor="{StaticResource CellenzaPinkDark}"
+									Command="">
+							</TextCell>
+							<TextCell
+								Text="{Binding Email}"
+								TextColor="{StaticResource CellenzaPinkDark}">
+							</TextCell>
+							<TextCell
+								Text="{Binding Cell}"
+								TextColor="{StaticResource CellenzaPinkDark}">
+							</TextCell>
+							<ViewCell
+								Height="600">
+								<maps:Map
+                                    HasScrollEnabled="false"
+									HorizontalOptions="Fill"
+									VerticalOptions="Fill"
+									x:Name="Location"
+									IsShowingUser="true"
+									MapType="Street" />
+							</ViewCell>
+						</TableSection>
+					</TableRoot>
+				</TableView>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

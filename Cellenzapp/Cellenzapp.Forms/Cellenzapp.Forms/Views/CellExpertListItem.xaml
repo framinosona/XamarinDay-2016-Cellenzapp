@@ -5,36 +5,43 @@
 	x:Class="Cellenzapp.Forms.Views.CellExpertListItem">
 	<ContentView.Content>
 		<Grid
-			HeightRequest="400"
+			BackgroundColor="{StaticResource CellenzaPinkDark}"
+			VerticalOptions="Fill"
 			HorizontalOptions="Fill">
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="*" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="Auto" />
+			</Grid.RowDefinitions>
 			<Image
-				HorizontalOptions="Fill"
-				VerticalOptions="Fill"
+				Grid.Row="0"
 				Source="{Binding Picture.Large}"
 				Aspect="AspectFill" />
-			<StackLayout
-				VerticalOptions="EndAndExpand"
-				HorizontalOptions="Fill"
-				BackgroundColor="{StaticResource CellenzaPinkDark}">
-				<Label
-					Text="{Binding Name.Full}"
-					LineBreakMode="WordWrap"
-					Style="{DynamicResource ListItemTextStyle}"
-						FontSize="30"
-					TextColor="White"
-					HorizontalTextAlignment="Center"
-					HorizontalOptions="Fill">
-				</Label>
-				<Label
-					Text="{Binding Email}"
-					LineBreakMode="CharacterWrap"
-					Style="{DynamicResource ListItemDetailTextStyle}"
-                        FontSize="22"
-					TextColor="White"
-					HorizontalTextAlignment="Center"
-					HorizontalOptions="Fill">
-				</Label>
-			</StackLayout>
+			<Label
+				Grid.Row="1"
+				Margin="6,6,6,3"
+				Text="{Binding Name.Full}"
+				LineBreakMode="WordWrap"
+				Style="{DynamicResource ListItemTextStyle}"
+				FontSize="24"
+				TextColor="White"
+				HorizontalTextAlignment="Center"
+				HorizontalOptions="Fill">
+			</Label>
+			<Label
+				Grid.Row="2"
+				Margin="6,3,6,6"
+				Text="{Binding Email}"
+				LineBreakMode="CharacterWrap"
+				Style="{DynamicResource ListItemDetailTextStyle}"
+				FontSize="18"
+				TextColor="White"
+				HorizontalTextAlignment="Center"
+				HorizontalOptions="Fill">
+			</Label>
 		</Grid>
 	</ContentView.Content>
 </ContentView>

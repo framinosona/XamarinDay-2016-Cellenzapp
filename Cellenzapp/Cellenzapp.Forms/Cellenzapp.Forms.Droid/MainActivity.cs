@@ -21,6 +21,7 @@ namespace Cellenzapp.Forms.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+            Xamarin.FormsMaps.Init(this, bundle);
 
             var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
             x = typeof(Xamarin.Forms.Themes.LightThemeResources);
