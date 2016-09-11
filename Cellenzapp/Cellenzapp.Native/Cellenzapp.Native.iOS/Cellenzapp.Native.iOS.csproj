@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Cellenzapp.Native.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Cellenzapp.Native.iOS</AssemblyName>
+    <AssemblyName>CellenzappNativeiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>

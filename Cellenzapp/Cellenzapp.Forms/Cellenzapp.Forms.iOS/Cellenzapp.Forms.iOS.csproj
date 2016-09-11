@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Cellenzapp.Forms.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Cellenzapp.Forms.iOS</AssemblyName>
+    <AssemblyName>CellenzappFormsiOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>

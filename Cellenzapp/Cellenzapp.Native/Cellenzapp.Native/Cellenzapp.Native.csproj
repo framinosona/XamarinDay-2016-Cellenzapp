@@ -35,7 +35,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Cellenzapp.Core\Cellenzapp.Core.Core\Cellenzapp.Core.Core.csproj">
+    <ProjectReference Include="..\..\Cellenzapp.Core\Cellenzapp.Core\Cellenzapp.Core.csproj">
       <Project>{0f9de0a2-102c-41be-8b14-e018e4fd8d98}</Project>
       <Name>Cellenzapp.Core</Name>
     </ProjectReference>
