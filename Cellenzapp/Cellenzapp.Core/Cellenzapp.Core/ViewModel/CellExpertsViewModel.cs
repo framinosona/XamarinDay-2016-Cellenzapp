@@ -34,7 +34,7 @@ namespace Cellenzapp.Core.ViewModel
             }
         }
 
-
+        #region Refresh
         RelayCommand refreshCommand;
         public RelayCommand RefreshCommand {
             get { return refreshCommand ?? (refreshCommand = new RelayCommand(async () => await ExecuteRefreshCommandAsync())); }
@@ -56,6 +56,8 @@ namespace Cellenzapp.Core.ViewModel
                 IsBusy = false;
             }
         }
+        #endregion
+
 
     }
 }

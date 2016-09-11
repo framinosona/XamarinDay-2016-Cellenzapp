@@ -15,7 +15,7 @@ namespace Cellenzapp.Forms.ValueConverters
 
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (value == null)
+            if(value == null)
                 return FalseValue;
             else
                 return (bool)value ? TrueValue : FalseValue;
@@ -26,4 +26,6 @@ namespace Cellenzapp.Forms.ValueConverters
             return value?.Equals(TrueValue) ?? false;
         }
     }
+    public class BoolToObjectConverter : BoolToValueConverter<Object> { }
+    public class BoolToStringConverter : BoolToValueConverter<String> { }
 }

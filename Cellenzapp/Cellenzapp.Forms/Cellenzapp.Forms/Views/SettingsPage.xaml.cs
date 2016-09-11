@@ -36,5 +36,6 @@ namespace Cellenzapp.Forms.Views
         {
             InitializeComponent();
         }
+
     }
 }

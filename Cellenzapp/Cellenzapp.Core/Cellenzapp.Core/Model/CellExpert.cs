@@ -65,6 +65,12 @@ namespace Cellenzapp.Core.Model
         public double Lat { get; set; } = 48.876092;
 
         public double Lon { get; set; } = 2.311152;
+
+        public string Full {
+            get {
+                return $"{Street} - {City} {Postcode}";
+            }
+        }
     }
 
     [DataContract]

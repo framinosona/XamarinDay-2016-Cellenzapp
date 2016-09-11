@@ -1,5 +1,5 @@
 ﻿//
-// FormsViewModelLocator.cs
+// TwitterService.cs
 //
 // Author:
 //       Francois Raminosona <framinosona@hotmail.fr>
@@ -23,24 +23,21 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
+using System;
 using Cellenzapp.Core.ViewModel;
+using Xamarin.Forms;
 
 namespace Cellenzapp.Forms.ViewModel
 {
-    public class FormsViewModelLocator : ViewModelLocator
+    public class TwitterService : ITwitterService
     {
-        public FormsViewModelLocator() : base()
+        public TwitterService()
         {
-            SimpleIoc.Default.Register<MasterDetailViewModel>();
-
-            SimpleIoc.Default.Register<ITwitterService, TwitterService>();
         }
 
-        public MasterDetailViewModel MasterDetailViewModel => ServiceLocator.Current.GetInstance<MasterDetailViewModel>();
-
+        public void OpenTwitterUri(string UserID)
+        {
+            Device.OpenUri(new Uri("twitter://user?user_id=" + UserID));
+        }
     }
 }

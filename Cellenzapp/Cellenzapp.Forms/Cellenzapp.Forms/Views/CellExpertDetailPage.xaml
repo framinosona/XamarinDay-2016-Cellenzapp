@@ -6,6 +6,7 @@
 	xmlns:Views="clr-namespace:Cellenzapp.Forms.Views;assembly=Cellenzapp.Forms"
 	xmlns:helpers="clr-namespace:Cellenzapp.Forms.Helpers;assembly=Cellenzapp.Forms"
 	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    BindingContext="{Binding CellExpertViewModel, Source={StaticResource ViewModelLocator}}"
 	Title="Cell'Expert">
 	<ContentPage.ToolbarItems>
 		<!--<ToolbarItem
@@ -18,7 +19,7 @@
 			<StackLayout
 				BackgroundColor="White"
 				Spacing="0">
-				<Views:CellExpertListItem
+				<Views:CellExpertListItem BindingContext="{Binding Expert}"
 					HeightRequest="400" />
 				<StackLayout
 					Padding="12"
@@ -35,7 +36,7 @@
 					Padding="12"
 					Spacing="6">
 					<Label
-						Text="{Binding AboutMe}"
+						Text="{Binding Path=Expert.AboutMe}"
 						Style="{DynamicResource ListItemTextStyle}"
 						LineBreakMode="WordWrap"
 						TextColor="{StaticResource CellenzaPinkDark}" />
@@ -57,28 +58,53 @@
 					<TableRoot>
 						<TableSection>
 							<TextCell
-								Text="{Binding TwitterHandle, StringFormat='@{0}'}"
+								Text="{Binding Path=Expert.TwitterHandle, StringFormat='@{0}'}"
 								TextColor="{StaticResource CellenzaPinkDark}"
-									Command="">
-							</TextCell>
+								Command="{Binding TwitterCommand}"
+								CommandParameter="{Binding Path=Expert.TwitterHandle}"  />
 							<TextCell
-								Text="{Binding Email}"
-								TextColor="{StaticResource CellenzaPinkDark}">
-							</TextCell>
+								Text="{Binding Path=Expert.Email}"
+								TextColor="{StaticResource CellenzaPinkDark}"
+								Command="{Binding EmailCommand}"
+								CommandParameter="{Binding Path=Expert.Email}" />
 							<TextCell
-								Text="{Binding Cell}"
-								TextColor="{StaticResource CellenzaPinkDark}">
-							</TextCell>
+								Text="{Binding Path=Expert.Cell}"
+								Detail="Appeler"
+								TextColor="{StaticResource CellenzaPinkDark}"
+								Command="{Binding CallCommand}"
+								CommandParameter="{Binding Path=Expert.Cell}" />
+							<TextCell
+								Text="{Binding Path=Expert.Cell}"
+								Detail="Envoyer un SMS"
+								TextColor="{StaticResource CellenzaPinkDark}"
+								Command="{Binding SendSMSCommand}"
+								CommandParameter="{Binding Path=Expert.Cell}" />
+							<!--
 							<ViewCell
-								Height="600">
-								<maps:Map
-                                    HasScrollEnabled="false"
-									HorizontalOptions="Fill"
-									VerticalOptions="Fill"
-									x:Name="Location"
-									IsShowingUser="true"
-									MapType="Street" />
+								Height="400">
+								<ContentPresenter>
+									<OnPlatform
+										x:TypeArguments="View">
+										<OnPlatform.iOS>
+											<maps:Map
+												HasScrollEnabled="false"
+													HasZoomEnabled="false"
+												HorizontalOptions="Fill"
+												VerticalOptions="Fill"
+												x:Name="Location"
+												IsShowingUser="true"
+												MapType="Street" />
+										</OnPlatform.iOS>
+									</OnPlatform>
+								</ContentPresenter>
 							</ViewCell>
+                            -->
+                            <TextCell
+                                Text="{Binding Path=Expert.Location.Full}"
+                                Detail="Afficher sur une carte"
+                                TextColor="{StaticResource CellenzaPinkDark}"
+                                Command="{Binding OpenMapCommand}"
+                                CommandParameter="{Binding Path=Expert.Location.Full}" />
 						</TableSection>
 					</TableRoot>
 				</TableView>

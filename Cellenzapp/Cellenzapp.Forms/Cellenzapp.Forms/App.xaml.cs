@@ -26,6 +26,8 @@ namespace Cellenzapp.Forms
             foreach(var res in assembly.GetManifestResourceNames())
                 System.Diagnostics.Debug.WriteLine("found resource: " + res);
 
+
+
             MainPage = new Cellenzapp.Forms.Views.RootPage();
         }
 

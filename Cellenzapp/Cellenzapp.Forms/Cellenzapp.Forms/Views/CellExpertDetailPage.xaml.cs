@@ -30,36 +30,42 @@ using Xamarin.Forms;
 using Cellenzapp.Core.Model;
 using System.Diagnostics;
 using Xamarin.Forms.Maps;
+using Cellenzapp.Core.ViewModel;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace Cellenzapp.Forms.Views
 {
     public partial class CellExpertDetailPage : ContentPage
     {
 
-        CellExpert Expert;
+        CellExpertViewModel ViewModel;
 
         public CellExpertDetailPage(CellExpert expert)
         {
             InitializeComponent();
-            Expert = expert;
-            this.BindingContext = expert;
+            ViewModel = SimpleIoc.Default.GetInstance<CellExpertViewModel>();
+            ViewModel.Expert = expert;
+            //this.BindingContext = expert;
             this.Title = expert.Name.Full;
             Debug.WriteLine($"Navigated to : {expert.Name.Full}");
 
 
         }
+
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            var position = new Position(Expert.Location.Lat, Expert.Location.Lon);
+            /*
+            var position = new Position(ViewModel.Expert.Location.Lat, ViewModel.Expert.Location.Lon);
             var pin = new Pin {
                 Type = PinType.Place,
                 Position = position,
                 Label = "",
-                Address = $"{Expert.Location.Street} - {Expert.Location.City} {Expert.Location.Postcode}"
+                Address = $"{ViewModel.Expert.Location.Street} - {ViewModel.Expert.Location.City} {ViewModel.Expert.Location.Postcode}"
             };
             Location.Pins.Add(pin);
-            Location.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(1)));
+            Location.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(1)));*/
         }
     }
 }

@@ -43,12 +43,14 @@ namespace Cellenzapp.Core.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
             SimpleIoc.Default.Register<CellExpertsViewModel>();
+            SimpleIoc.Default.Register<CellExpertViewModel>();
             SimpleIoc.Default.Register<NavigationViewModel>();
         }
 
         public MainViewModel MainViewModel => ServiceLocator.Current.GetInstance<MainViewModel>();
         public SettingsViewModel SettingsViewModel => ServiceLocator.Current.GetInstance<SettingsViewModel>();
         public CellExpertsViewModel CellExpertsViewModel => ServiceLocator.Current.GetInstance<CellExpertsViewModel>();
+        public CellExpertViewModel CellExpertViewModel => ServiceLocator.Current.GetInstance<CellExpertViewModel>();
         public NavigationViewModel NavigationViewModel => ServiceLocator.Current.GetInstance<NavigationViewModel>();
 
         public static void Cleanup()
