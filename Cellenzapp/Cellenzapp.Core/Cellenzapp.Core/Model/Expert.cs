@@ -24,6 +24,7 @@ namespace Cellenzapp.Core
         public string Tel { get; set; }
         [JsonProperty]
         public string About { get; set; }
+		public string CompanyAdress { get; set; } = "156 Boulevard Haussmann, 75008 Paris";
     }
 }
 

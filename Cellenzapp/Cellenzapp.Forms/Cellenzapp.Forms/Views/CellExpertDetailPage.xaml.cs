@@ -45,27 +45,14 @@ namespace Cellenzapp.Forms.Views
             InitializeComponent();
             ViewModel = SimpleIoc.Default.GetInstance<CellExpertViewModel>();
             ViewModel.Expert = expert;
-            //this.BindingContext = expert;
             this.Title = expert.Name.Full;
             Debug.WriteLine($"Navigated to : {expert.Name.Full}");
-
-
         }
 
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            /*
-            var position = new Position(ViewModel.Expert.Location.Lat, ViewModel.Expert.Location.Lon);
-            var pin = new Pin {
-                Type = PinType.Place,
-                Position = position,
-                Label = "",
-                Address = $"{ViewModel.Expert.Location.Street} - {ViewModel.Expert.Location.City} {ViewModel.Expert.Location.Postcode}"
-            };
-            Location.Pins.Add(pin);
-            Location.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(1)));*/
         }
     }
 }
