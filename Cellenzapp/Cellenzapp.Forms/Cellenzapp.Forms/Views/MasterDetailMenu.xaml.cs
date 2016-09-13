@@ -58,28 +58,8 @@ namespace Cellenzapp.Forms.Views
         {
             if(ListViewMenu.SelectedItem == null)
                 return;
-
-
             ViewModel.SetCurrentPage(
                 ((KeyValuePair<MenuPagesEnum, HomeMenuItem>)selectedItemChangedEventArgs.SelectedItem).Key);
-            /*
-            try
-            {
-                ViewModel.SetCurrentPage(
-                    ((KeyValuePair<MenuPagesEnum, HomeMenuItem>)selectedItemChangedEventArgs.SelectedItem).Key);
-            }
-            catch (Exception)
-            {
-                try
-                {
-                    ViewModel.SetCurrentPage(
-                        ((HomeMenuItem)selectedItemChangedEventArgs.SelectedItem).MenuPagesEnum);
-                }
-                catch (Exception)
-                {
-                    
-                }
-            }*/
         }
     }
 }

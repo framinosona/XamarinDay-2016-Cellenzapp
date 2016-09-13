@@ -36,7 +36,7 @@
 					Padding="12"
 					Spacing="6">
 					<Label
-						Text="{Binding Path=Expert.AboutMe}"
+						Text="{Binding Path=Expert.About}"
 						Style="{DynamicResource ListItemTextStyle}"
 						LineBreakMode="WordWrap"
 						TextColor="{StaticResource CellenzaPinkDark}" />
@@ -58,27 +58,27 @@
 					<TableRoot>
 						<TableSection>
 							<TextCell
-								Text="{Binding Path=Expert.TwitterHandle, StringFormat='@{0}'}"
+								Text="{Binding Path=Expert.Twitter, StringFormat='@{0}'}"
 								TextColor="{StaticResource CellenzaPinkDark}"
 								Command="{Binding TwitterCommand}"
-								CommandParameter="{Binding Path=Expert.TwitterHandle}"  />
+								CommandParameter="{Binding Path=Expert.Twitter}"  />
 							<TextCell
 								Text="{Binding Path=Expert.Email}"
 								TextColor="{StaticResource CellenzaPinkDark}"
 								Command="{Binding EmailCommand}"
 								CommandParameter="{Binding Path=Expert.Email}" />
 							<TextCell
-								Text="{Binding Path=Expert.Cell}"
+								Text="{Binding Path=Expert.Tel}"
 								Detail="Appeler"
 								TextColor="{StaticResource CellenzaPinkDark}"
 								Command="{Binding CallCommand}"
-								CommandParameter="{Binding Path=Expert.Cell}" />
+								CommandParameter="{Binding Path=Expert.Tel}" />
 							<TextCell
-								Text="{Binding Path=Expert.Cell}"
+								Text="{Binding Path=Expert.Tel}"
 								Detail="Envoyer un SMS"
 								TextColor="{StaticResource CellenzaPinkDark}"
 								Command="{Binding SendSMSCommand}"
-								CommandParameter="{Binding Path=Expert.Cell}" />
+								CommandParameter="{Binding Path=Expert.Tel}" />
 							<!--
 							<ViewCell
 								Height="400">
@@ -100,11 +100,11 @@
 							</ViewCell>
                             -->
                             <TextCell
-                                Text="{Binding Path=Expert.Location.Full}"
+                                Text="{Binding Path=Expert.CompanyAdress}"
                                 Detail="Afficher sur une carte"
                                 TextColor="{StaticResource CellenzaPinkDark}"
                                 Command="{Binding OpenMapCommand}"
-                                CommandParameter="{Binding Path=Expert.Location.Full}" />
+                                CommandParameter="{Binding Path=Expert.CompanyAdress}" />
 						</TableSection>
 					</TableRoot>
 				</TableView>
