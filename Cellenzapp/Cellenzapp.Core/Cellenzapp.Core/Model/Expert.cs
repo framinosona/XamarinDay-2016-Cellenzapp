@@ -11,13 +11,17 @@ namespace Cellenzapp.Core
         [JsonProperty]
         public string Picture { get; set; }
         [JsonProperty]
-        public int Age { get; set; }
+        public int Company { get; set; }
         [JsonProperty]
         public string Name { get; set; }
         [JsonProperty]
-        public string Gender { get; set; }
+        public string Job { get; set; }
+        [JsonProperty]
+        public string Twitter { get; set; }
         [JsonProperty]
         public string Email { get; set; }
+        [JsonProperty]
+        public string Tel { get; set; }
         [JsonProperty]
         public string About { get; set; }
     }
