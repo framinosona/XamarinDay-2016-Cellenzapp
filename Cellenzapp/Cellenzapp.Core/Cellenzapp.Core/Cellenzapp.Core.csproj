@@ -54,6 +54,7 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="ViewModel\CellExpertViewModel.cs" />
     <Compile Include="ViewModel\ITwitterService.cs" />
+    <Compile Include="Data\ObservableExpert.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

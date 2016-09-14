@@ -12,18 +12,18 @@ namespace Cellenzapp.Core.Data
 {
     public class DesignDataService : IDataService
     {
-        public IEnumerable<CellExpert> CellExperts { get; set; }
+		public IEnumerable<ObservableExpert> CellExperts { get; set; }
         HttpClient httpClient = new HttpClient();
 
-        public async Task<IEnumerable<CellExpert>> TryLoadCellExpertsAsync()
+        public async Task<IEnumerable<ObservableExpert>> TryLoadCellExpertsAsync()
         {
             try {
                 var count = 20;
                 var rawJson = await httpClient.GetStringAsync($"https://randomuser.me/api/?results={count}&noinfo");
                 var output = JsonConvert.DeserializeObject<RandomUserResults>(rawJson);
                 Debug.WriteLine($"DL : {output.CellExpert.Count} employees");
-                CellExperts = output.CellExpert;
-                return output.CellExpert;
+                CellExperts = output.CellExpert.Select((expert) => new ObservableExpert(expert));
+                return CellExperts;
             } catch(Exception) {
                 return null;
             }

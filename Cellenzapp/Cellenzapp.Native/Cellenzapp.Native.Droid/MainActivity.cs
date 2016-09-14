@@ -6,6 +6,7 @@ using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using Cellenzapp.Core;
 using Cellenzapp.Core.Model;
 using Cellenzapp.Core.ViewModel;
 using Microsoft.Practices.ServiceLocation;
@@ -30,11 +31,11 @@ namespace Cellenzapp.Native.Droid
 
 	public class CellExpertAdapter : RecyclerView.Adapter
 	{
-		private List<CellExpert> _list;
+		private List<ObservableExpert> _list;
 
-		public CellExpertAdapter(IEnumerable<CellExpert> items)
+		public CellExpertAdapter(IEnumerable<ObservableExpert> items)
 		{
-			_list = new List<CellExpert>(items);
+			_list = new List<ObservableExpert>(items);
 		}
 
 		public override int ItemCount => _list.Count;
@@ -45,17 +46,17 @@ namespace Cellenzapp.Native.Droid
 
 			var dataContext = _list[position];
 
-			if (dataContext.Picture?.Large != null)
+			if (dataContext.Picture != null)
 			{
 				Picasso.With(holder.ItemView.Context)
-					   .Load(dataContext.Picture.Large)
+					   .Load(dataContext.Picture)
 				       .Placeholder(Resource.Drawable.ic_expert_placeholder)
 				       .CenterCrop()
 				       .Fit()
 					   .Into(h.ExpertLargeImage);
 			}
 
-			h.ExpertFullName.Text = dataContext.Name?.Full ?? string.Empty;
+			h.ExpertFullName.Text = dataContext.Name ?? string.Empty;
 			h.ExpertEmail.Text = dataContext.Email ?? string.Empty;
 		}
 

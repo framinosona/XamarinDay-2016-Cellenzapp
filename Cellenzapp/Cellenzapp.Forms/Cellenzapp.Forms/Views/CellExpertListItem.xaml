@@ -13,35 +13,43 @@
 					Height="*" />
 				<RowDefinition
 					Height="Auto" />
-				<RowDefinition
-					Height="Auto" />
 			</Grid.RowDefinitions>
 			<Image
 				Grid.Row="0"
-				Source="{Binding Picture.Large}"
+				Source="{Binding Picture}"
 				Aspect="AspectFill" />
+			<StackLayout
+					Padding="6"
+					Spacing="6"
+					Grid.Row="1"
+				HorizontalOptions="Fill"
+				BackgroundColor="{StaticResource CellenzaPinkDark}">
+
 			<Label
-				Grid.Row="1"
-				Margin="6,6,6,3"
-				Text="{Binding Name.Full}"
+				Text="{Binding Name}"
 				LineBreakMode="WordWrap"
 				Style="{DynamicResource ListItemTextStyle}"
 				FontSize="24"
 				TextColor="White"
 				HorizontalTextAlignment="Center"
-				HorizontalOptions="Fill">
-			</Label>
+				HorizontalOptions="Fill"/>
 			<Label
-				Grid.Row="2"
-				Margin="6,3,6,6"
-				Text="{Binding Email}"
+				Text="{Binding Job}"
 				LineBreakMode="CharacterWrap"
 				Style="{DynamicResource ListItemDetailTextStyle}"
 				FontSize="18"
 				TextColor="White"
 				HorizontalTextAlignment="Center"
-				HorizontalOptions="Fill">
-			</Label>
+				HorizontalOptions="Fill"/>
+			<Label
+				Text="{Binding Company, StringFormat='@{0}'}"
+				LineBreakMode="CharacterWrap"
+				Style="{DynamicResource ListItemDetailTextStyle}"
+				FontSize="18"
+				TextColor="White"
+				HorizontalTextAlignment="Center"
+				HorizontalOptions="Fill"/>
+			</StackLayout>
 		</Grid>
 	</ContentView.Content>
 </ContentView>

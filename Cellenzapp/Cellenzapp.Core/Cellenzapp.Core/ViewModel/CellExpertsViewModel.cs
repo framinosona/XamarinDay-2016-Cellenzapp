@@ -15,21 +15,21 @@ namespace Cellenzapp.Core.ViewModel
 {
     public class CellExpertsViewModel : CustomViewModelBase
     {
-        public ObservableCollection<CellExpert> CellExperts { get; set; }
+		public ObservableCollection<ObservableExpert> CellExperts { get; set; }
 
         public CellExpertsViewModel()
         {
-            CellExperts = new ObservableCollection<CellExpert>();
+            CellExperts = new ObservableCollection<ObservableExpert>();
 
             Load();
         }
 
         public async Task Load()
         {
-            var DataService = SimpleIoc.Default.GetInstance<IDataService>();
-            await DataService.TryLoadCellExpertsAsync();
+            var dataService = SimpleIoc.Default.GetInstance<IDataService>();
+            await dataService.TryLoadCellExpertsAsync();
             CellExperts.Clear();
-            foreach(var expert in DataService.CellExperts) {
+            foreach(var expert in dataService.CellExperts) {
                 CellExperts.Add(expert);
             }
         }

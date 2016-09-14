@@ -30,6 +30,7 @@ using Xamarin.Forms;
 using Cellenzapp.Core.ViewModel;
 using Cellenzapp.Core.Model;
 using System.Diagnostics;
+using Cellenzapp.Core;
 
 namespace Cellenzapp.Forms.Views
 {
@@ -42,12 +43,12 @@ namespace Cellenzapp.Forms.Views
 
         async void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            var expert = e.Item as CellExpert;
+			var expert = e.Item as ObservableExpert;
             if(expert == null) {
                 Debug.WriteLine($"Tapped : null");
                 return;
             }
-            Debug.WriteLine($"Tapped : {expert.Name.Full}");
+            Debug.WriteLine($"Tapped : {expert.Name}");
 
             try {
                 await this.Navigation.PushAsync(new CellExpertDetailPage(expert));

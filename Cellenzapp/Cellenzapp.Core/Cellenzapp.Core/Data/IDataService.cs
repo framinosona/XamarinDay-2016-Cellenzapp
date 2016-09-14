@@ -9,8 +9,8 @@ namespace Cellenzapp.Core.Data
 {
     public interface IDataService
     {
-        IEnumerable<CellExpert> CellExperts { get; set; }
+        IEnumerable<ObservableExpert> CellExperts { get; set; }
 
-        Task<IEnumerable<CellExpert>> TryLoadCellExpertsAsync();
+        Task<IEnumerable<ObservableExpert>> TryLoadCellExpertsAsync();
     }
 }

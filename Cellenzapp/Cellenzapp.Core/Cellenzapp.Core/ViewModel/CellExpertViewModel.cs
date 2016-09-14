@@ -38,13 +38,13 @@ namespace Cellenzapp.Core.ViewModel
     {
         public const string ExpertPropertyName = "Expert";
 
-        private CellExpert _expert;
+        private ObservableExpert _expert;
 
         /// <summary>
         ///     Sets and gets the Expert property.
         ///     Changes to that property's value raise the PropertyChanged event.
         /// </summary>
-        public CellExpert Expert {
+        public ObservableExpert Expert {
             get { return _expert; }
 
             set {

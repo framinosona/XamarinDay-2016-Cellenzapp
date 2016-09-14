@@ -32,6 +32,7 @@ using System.Diagnostics;
 using Xamarin.Forms.Maps;
 using Cellenzapp.Core.ViewModel;
 using GalaSoft.MvvmLight.Ioc;
+using Cellenzapp.Core;
 
 namespace Cellenzapp.Forms.Views
 {
@@ -40,13 +41,13 @@ namespace Cellenzapp.Forms.Views
 
         CellExpertViewModel ViewModel;
 
-        public CellExpertDetailPage(CellExpert expert)
+		public CellExpertDetailPage(ObservableExpert expert)
         {
             InitializeComponent();
             ViewModel = SimpleIoc.Default.GetInstance<CellExpertViewModel>();
             ViewModel.Expert = expert;
-            this.Title = expert.Name.Full;
-            Debug.WriteLine($"Navigated to : {expert.Name.Full}");
+            this.Title = expert.Name;
+            Debug.WriteLine($"Navigated to : {expert.Name}");
         }
 
 
